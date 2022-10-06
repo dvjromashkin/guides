@@ -1,3 +1,7 @@
+![Penumbra logo](docs/images/penumbra-dark.svg#gh-dark-mode-only)
+![Penumbra logo](docs/images/penumbra-light-bw.svg#gh-light-mode-only)
+
+
 So I want to tell you how to run a validator on the Penumbra network. The problem is that the network is constantly being updated (about every week) and needs to be reinstalled each time. Which complicates the process of building a one-line script.
 First, let’s try it manually and figure out how it works.
 Penumbra is a mixture of two applications. One represents the mechanics itself, and is written in Rust, and the other is Tendermint, which is needed to work the blockchain structure itself.
