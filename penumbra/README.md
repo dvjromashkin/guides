@@ -246,7 +246,7 @@ cp $HOME/penumbra/target/release/pd /usr/local/bin
 
 cp $HOME/penumbra/target/release/pcli /usr/local/bin
 
-rm -rf &HOME/.penumbra/testnet_data/node0/pd
+rm -rf $HOME/.penumbra/testnet_data/node0/pd
 
 tendermint unsafe_reset_all --home="$HOME/.penumbra/testnet_data/node0/tendermint"
 
