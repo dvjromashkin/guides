@@ -260,6 +260,8 @@ sed -i.bak "s/^persistent-peers *=.*/persistent-peers = \"$PEER\"/;" $HOME/.penu
 
 sed -i.bak "s/^bootstrap-peers *=.*/bootstrap-peers = \"$PEER\"/;" $HOME/.penumbra/testnet_data/node0/tendermint/config/config.toml
 
+sed -i.bak "s/^seeds *=.*/seeds = \"$PEER\"/;" $HOME/.penumbra/testnet_data/node0/tendermint/config/config.toml
+
 systemctl start pdd
 
 systemctl start tendermintd
