@@ -276,3 +276,9 @@ curl -sS http://127.0.0.1:26657/status | jq -r '.result.sync_info.catching_up'
 ```
   If “true” — the node is still synchronized. If “false” has already finished synchronization, you can proceed to the formation of the Validator and the steak specified above in the instructions.
 
+Problems with Peers
+--------------------------------------------------------------------------------------------
+```
+PEERS=$(curl -sS http://testnet.penumbra.zone:26657/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr),"' | awk -F ':' '{print $1":"$(NF)}' | tr -d '\n' | sed 's/.$//')
+sed -i.bak "s/^persistent-peers *=.*/persistent-peers = \"$PEERS\"/;" $HOME/.penumbra/testnet_data/node0/tendermint/config/config.toml
+```
