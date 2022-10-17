@@ -26,3 +26,57 @@ expect {
 }
 ```
 Save and exit. (ctrl+s, ctrl+x)
+
+Next, we need to create and configure the actual script for automatically checking and logging out of the jail:
+```
+nano /home/unjail.sh
+```
+We insert the following text, and replace some data in it with our own:
+<your valoper key>
+<your wallet name>
+Telegram bot ID
+Chat ID
+```
+#!/bin/bash
+source /root/.bashrc
+source /root/.profile
+source /root/.bash_profile
+STATUS=$(haqqd q staking validator <you valoper key> | grep jailed | awk '{print $2}')
+if [[ $STATUS == false ]];
+then
+        echo -e "Not jailed\n"
+else
+TELEGRAM_BOT_TOKEN="1234567890:xXxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXxX"
+CHAT_ID="123456789"
+
+SUMMARY=$(echo HAQQ: In Jail. Unjailed is run. )
+
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -d "{\"chat_id\": \"${CHAT_ID}\", \"text\": \"${SUMMARY}\", \"disable_notification\": true}" \
+     https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage
+        haqqd tx slashing unjail --from <your wallet name> --gas auto --chain-id haqq_54211-3 -y
+        echo -e "In jailed\n"
+fi
+
+```
+  
+Save and exit (ctrl+s, ctrl+x)
+
+  Next, we need to allow the scripts our right to run.
+  
+```
+chmod +x /home/autounjail.sh
+chmod +x /home/unjail.sh
+```
+  
+Now we register it in crowns, for every 10 minutes, and enjoy.
+  
+```
+crontab -e 
+```
+and paste at the bottom
+```
+*/10 * * * * /root/autounjail.sh >> /home/cron.log
+```
+  Save and exit (ctrl+s, ctrl+x)
