@@ -213,11 +213,11 @@ pcli -n 127.0.0.1 q validator list -i
 ```
   The address of our validator can be seen with the command:
 ```
-cat /root/.penumbra/validator.json | jq ".identity_key" | tr -d '"'
+cat /root/.penumbra/validator.json | grep identity_key | tr -d "'" | awk '{print $3}'
 ```
   We need to delegate coins to our validator. To delegate everything, you can use the command:
 ```
-pcli --node 127.0.0.1 tx delegate $(pcli --node 127.0.0.1 v balance | grep penumbra) --to $(cat /root/.penumbra/validator.json | jq ".identity_key" | tr -d '"')
+pcli --node 127.0.0.1 tx delegate $(pcli --node 127.0.0.1 v balance | grep penumbra) --to $(cat /root/.penumbra/validator.json | grep identity_key | tr -d "'" | awk '{print $3}')
 ```
   The status of the active validator, will not appear immediately. Check periodically:
 ```
