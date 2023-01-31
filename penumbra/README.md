@@ -36,7 +36,7 @@ sudo curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 Tendermint installation
 ------------------------------------------------------------------------------------------
-Next, we need to install Tendermint v0.34.21
+Next, we need to install Tendermint v0.34.20
 ```
 git clone https://github.com/tendermint/tendermint.git
 
