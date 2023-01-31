@@ -40,6 +40,8 @@ Next, we need to install Tendermint v0.34.20
 ```
 git clone https://github.com/tendermint/tendermint.git
 
+cd tendermint
+
 git checkout v0.34.20
 
 make install
