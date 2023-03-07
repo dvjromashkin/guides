@@ -197,7 +197,7 @@ pcli q validator list
 ```
   We reset the wallet from the previous network:
 ```
-pcli --node 127.0.0.1 v reset
+pcli v reset
 ```
   Next, we check our balance:
 ```
