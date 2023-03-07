@@ -193,7 +193,7 @@ Forming the validator and the steak
 If our node is already synchronized, we need to make our validator data sent to the chain.
 To begin with, we can look at the list of available validators. To make it work better, we will do it from under our RPC, with the following command
 ```
-pcli --node 127.0.0.1 q validator list
+pcli q validator list
 ```
   We reset the wallet from the previous network:
 ```
@@ -201,7 +201,7 @@ pcli --node 127.0.0.1 v reset
 ```
   Next, we check our balance:
 ```
-pcli --node 127.0.0.1 v balance
+pcli v balance
 ```
   Upload our validator file to the network:
 ```
@@ -209,7 +209,7 @@ pcli validator definition upload --file /root/.penumbra/validator.json
 ```
   We check its inactive status with the command:
 ```
-pcli -n 127.0.0.1 q validator list -i
+pcli q validator list -i
 ```
   The address of our validator can be seen with the command:
 ```
@@ -217,11 +217,11 @@ cat /root/.penumbra/validator.json | grep identity_key | tr -d "'" | awk '{print
 ```
   We need to delegate coins to our validator. To delegate everything, you can use the command:
 ```
-pcli --node 127.0.0.1 tx delegate $(pcli --node 127.0.0.1 v balance | grep penumbra) --to $(cat /root/.penumbra/validator.json | grep identity_key | tr -d "'" | awk '{print $3}')
+pcli tx delegate $(pcli --node 127.0.0.1 v balance | grep penumbra | awk '{print $2}') --to $(cat /root/.penumbra/validator.json | grep identity_key | tr -d "'" | awk '{print $3}')
 ```
   The status of the active validator, will not appear immediately. Check periodically:
 ```
-pcli --node 127.0.0.1 q validator list
+pcli q validator list
 ```
   Updating
   -------------------------------------------------------------------------------------------------
