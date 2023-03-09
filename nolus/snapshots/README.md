@@ -1,4 +1,4 @@
-# SnapShot (~2.1 GB) updated every 12 hours
+# Nolus SnapShot (~2.1 GB) updated every 12 hours
 ```python
 cd $HOME
 sudo apt install lz4 -y
