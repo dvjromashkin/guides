@@ -1,7 +1,7 @@
 # SnapShot (~2.1 GB) updated every 12 hours
 ```python
 cd $HOME
-apt install lz4
+sudo apt install lz4 -y
 sudo systemctl stop nolusd
 cp $HOME/.nolus/data/priv_validator_state.json $HOME/.nolus/priv_validator_state.json.backup
 rm -rf $HOME/.nolus/data
