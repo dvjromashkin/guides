@@ -88,7 +88,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.c4e-chain/config/conf
 
 ## Download addrbook
 ```python
-wget -O $HOME/.c4e-chain/config/addrbook.json "https://raw.githubusercontent.com/dvjromashkin/testnet-tasks/c4e-main/addrbook.json"
+wget -O $HOME/.c4e-chain/config/addrbook.json "https://github.com/dvjromashkin/testnets-tasks/raw/main/c4e-main/addrbook.json"
 ```
 ## StateSync
 ```python
