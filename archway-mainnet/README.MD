@@ -29,7 +29,7 @@ Like any Cosmos-SDK chain, the hardware requirements are pretty modest.
  - 1TB NVMe SSD Storage
  - 100Mbps bi-directional Internet connection
 
-## Set up your Quicksilver testnet fullnode
+## Set up your Archway testnet fullnode
 
 ## Setting up vars
 Here you have to put name of your moniker (validator) that will be visible in explorer
@@ -129,7 +129,7 @@ archwayd tendermint unsafe-reset-all --home $HOME/.archway
 ```
 sudo tee /etc/systemd/system/archwayd.service > /dev/null <<EOF
 [Unit]
-Description=Quicksilver
+Description=Archway node
 After=network-online.target
 
 [Service]
