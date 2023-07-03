@@ -117,7 +117,7 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $
 
 ## Set minimum gas price
 ```
-sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.005uqck\"/" $HOME/.archway/config/app.toml
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.005aarch\"/" $HOME/.archway/config/app.toml
 ```
 
 ## Reset chain data
