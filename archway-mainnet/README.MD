@@ -74,7 +74,7 @@ fi
 ## Download and build binaries
 ```
 git clone https://github.com/archway-network/archway && cd archway
-git checkout v1.0.0
+git checkout v1.0.1
 make install
 ```
 
