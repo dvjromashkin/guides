@@ -3,7 +3,7 @@
 </p>
 
 
-# Celestia node setup for testnet — mocha-3
+# Celestia consensus node setup for testnet — mocha-3
 
 Explorers:
 >- https://celestia.explorers.guru/
