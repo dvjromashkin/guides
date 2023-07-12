@@ -106,7 +106,7 @@ wget https://raw.githubusercontent.com/celestiaorg/networks/master/mocha-3/genes
 ## Set seeds and peers
 ```
 SEEDS="3314051954fc072a0678ec0cbac690ad8676ab98@65.108.66.220:26656"
-PEERS="ec11f3be74010b78882de2cbd170d7ad4458d8ac@157.245.250.63:26656"
+PEERS="ec11f3be74010b78882de2cbd170d7ad4458d8ac@157.245.250.63:26656,b7b3afe7d22a20689422d7d16147a54587bbf654@185.144.99.12:26656"
 sed -i -e 's|^seeds *=.*|seeds = "'$SEEDS'"|; s|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.celestia-app/config/config.toml
 sed -i -e "s/^seed_mode *=.*/seed_mode = \"$SEED_MODE\"/" $HOME/.celestia-app/config/config.toml
 ```
