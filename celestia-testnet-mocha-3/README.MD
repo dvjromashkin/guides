@@ -3,7 +3,7 @@
 </p>
 
 
-# Archway node setup for mainnet — archway-1
+# Celestia node setup for testnet — mocha-3
 
 Explorers:
 >- https://celestia.explorers.guru/
