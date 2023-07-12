@@ -130,6 +130,11 @@ sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.005utia\"/" $HOME
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 ```
 
+## Fix config
+```
+sed -i -e "s/^seed_mode *=.*/#seed_mode = \"\"/" $HOME/.celestia-app/config/config.toml
+```
+
 ## Create service
 ```
 sudo tee /etc/systemd/system/celestia-appd.service > /dev/null <<EOF
