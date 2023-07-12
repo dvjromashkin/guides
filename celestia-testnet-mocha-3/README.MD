@@ -20,6 +20,9 @@ API
 GRPC
 >- https://grpc-celestia.cryptech.com.ua
 
+## Setup Bridge Node Guide
+>- https://github.com/dvjromashkin/guides/blob/main/celestia-testnet-mocha-3/install-bridge-node.md
+
 ## Hardware Requirements
 Like any Cosmos-SDK chain, the hardware requirements are pretty modest.
 Mandatory requirement for installation - GO ver =<1.20
