@@ -228,7 +228,7 @@ Before creating validator please make sure that you have at least 1 TIA (1 TIA i
 
 To check your wallet balance:
 ```
-archwayd query bank balances $CELESTIA_WALLET_ADDRESS
+celestia-appd query bank balances $CELESTIA_WALLET_ADDRESS
 ```
 > If your wallet does not show any balance than probably your node is still syncing. Please wait until it finish to synchronize and then continue 
 
@@ -326,7 +326,7 @@ celestia-appd keys delete $WALLET
 
 Get wallet balance
 ```
-celestia-appd query bank balances $ARCHWAY_WALLET_ADDRESS
+celestia-appd query bank balances $CELESTIA_WALLET_ADDRESS
 ```
 
 Transfer funds
@@ -368,7 +368,7 @@ celestia-appd tx staking edit-validator \
   --identity=<your_keybase_id> \
   --website="<your_website>" \
   --details="<your_validator_description>" \
-  --chain-id=$ARCHWAY_CHAIN_ID \
+  --chain-id=$CELESTIA_CHAIN_ID \
   --from=$WALLET \
   --gas=250000 \
   --fees=25000utia \
@@ -379,7 +379,7 @@ Unjail validator
 ```
 celestia-appd tx slashing unjail \
   --from=$WALLET \
-  --chain-id=$ARCHWAY_CHAIN_ID \
+  --chain-id=$CELESTIA_CHAIN_ID \
   --gas=250000 \
   --fees=25000utia
 ```
