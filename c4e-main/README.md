@@ -51,12 +51,12 @@ go version
 cd $HOME
 git clone https://github.com/chain4energy/c4e-chain
 cd c4e-chain
-git checkout v1.1.0
+git checkout v1.2.1
 make install
 ```
 `c4ed version --long`
-- version: v1.1.0
-- commit: d67fd60d07b41c52977539b9fb9c0c67de23837e
+- version: v1.2.1
+- commit: 80584176e3bcba8e7233a8bd03f1849eeb7091fa
 
 ```python
 c4ed init <nodename> --chain-id perun-1
