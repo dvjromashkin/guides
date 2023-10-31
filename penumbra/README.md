@@ -252,11 +252,11 @@ rm -rf $HOME/.penumbra/testnet_data/node0/pd
 
 tendermint unsafe_reset_all --home="$HOME/.penumbra/testnet_data/node0/tendermint"
 
-curl -s http://testnet.penumbra.zone:26657/genesis | jq ".result.genesis" > $HOME/.penumbra/testnet_data/node0/tendermint/config/genesis.json
+curl -s http://rpc.testnet.penumbra.zone:443/genesis | jq ".result.genesis" > $HOME/.penumbra/testnet_data/node0/tendermint/config/genesis.json
 
-IDNODE=$(curl -s http://testnet.penumbra.zone:26657/status | jq ".result.node_info.id" | tr -d '"')
+IDNODE=$(curl -s http://rpc.testnet.penumbra.zone:443/status | jq ".result.node_info.id" | tr -d '"')
 
-PEER=$IDNODE@testnet.penumbra.zone:26656
+PEER=$IDNODE@rpc.testnet.penumbra.zone:26656
 
 sed -i.bak "s/^persistent-peers *=.*/persistent-peers = \"$PEER\"/;" $HOME/.penumbra/testnet_data/node0/tendermint/config/config.toml
 
