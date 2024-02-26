@@ -72,9 +72,19 @@ fi
 ```
 
 ## Download and build binaries
+
+### To synchronize from the first block:
+
 ```
 git clone https://github.com/archway-network/archway && cd archway
 git checkout v1.0.1
+make install
+```
+
+### Current version (for synchronization via snapshot or statesync)
+```
+git clone https://github.com/archway-network/archway && cd archway
+git checkout v4.0.3
 make install
 ```
 
