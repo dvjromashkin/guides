@@ -104,7 +104,7 @@ wget -O $HOME/.c4e-chain/config/addrbook.json "https://github.com/dvjromashkin/t
 ## StateSync
 ```python
 SNAP_RPC=https://rpc-c4e.cryptech.com.ua:443/
-peers="3d75b4da612395d69ef58a0f6dbb851bd98c1962@185.144.99.246:26656"
+peers="15ea07bf6211f708eb2966b6c66e3aaa45834137@185.144.99.37:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.c4e-chain/config/config.toml
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)); \
@@ -127,8 +127,9 @@ apt install lz4
 sudo systemctl stop c4ed
 cp $HOME/.c4e-chain/data/priv_validator_state.json $HOME/.c4e-chain/priv_validator_state.json.backup
 rm -rf $HOME/.c4e-chain/data
-curl -L https://snapshot-c4e.cryptech.com.ua/c4e-snapshot.tar.lz4 | tar -Ilz4 -xf - -C $HOME/
+curl -o - -L http://c4e.snapshot.stavr.tech:1018/c4e/c4e-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.c4e-chain --strip-components 2
 mv $HOME/.c4e-chain/priv_validator_state.json.backup $HOME/.c4e-chain/data/priv_validator_state.json
+wget -O $HOME/.c4e-chain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/C4E/addrbook.json"
 sudo systemctl restart c4ed && journalctl -u c4ed -f -o cat
 ```
 
