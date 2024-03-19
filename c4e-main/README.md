@@ -36,7 +36,7 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
 
 ## Install GO 1.19
 ```python
-ver="1.19" && \
+ver="1.20.6" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
@@ -51,12 +51,12 @@ go version
 cd $HOME
 git clone https://github.com/chain4energy/c4e-chain
 cd c4e-chain
-git checkout v1.2.1
+git checkout v1.3.1
 make install
 ```
 `c4ed version --long`
-- version: v1.2.1
-- commit: 80584176e3bcba8e7233a8bd03f1849eeb7091fa
+- version: v1.3.1
+- commit: 55fe5c3c1a1b9a8489d39e765413315c5b61c4f7
 
 ```python
 c4ed init <nodename> --chain-id perun-1
